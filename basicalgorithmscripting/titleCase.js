@@ -1,12 +1,11 @@
 function titleCase(str){
-    let lowerCase = str.toLowerCase()
-    let splitString = lowerCase.split(' ')
+    let lowerCase = str.toLowerCase().split(' ')//dividir a string dentro de um array
+    let emptyArr = []
 
-    for(let i=0;i<splitString.length;i++){
-        str
+    for(let i=0;i<lowerCase.length;i++){
+        emptyArr.push(lowerCase[i].replace(lowerCase[i].charAt(0),s => s.toUpperCase()))
     }
 
-    return splitString[0][0]
+    return emptyArr.join(' ')
 }
-
-console.log(titleCase('VOU ESTUDAR'))
+console.log(titleCase("I'm a little tea pot"))
