@@ -4,8 +4,11 @@ function mutation(arr){
         newArr.push(arr[i].toLowerCase())
     }
 
+    //dividir a segunda string para verificar se cada letra pertence ao array
+    let divSecondArr = newArr[1].split("")
 
-    return newArr[1].includes(...newArr[0])
+    //usar o reduce para verificar se cada letra pertence ao array, é necessário um valor inicial
+    return divSecondArr.reduce((present,letter) => present && newArr[0].includes(letter),true)
 }
 
-console.log(mutation("Mary", "Aarmy"))
+console.log(mutation(["Alien", "line"]))
