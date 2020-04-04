@@ -11,4 +11,4 @@ console.log(usersUnder30);
 
 let testnum = "4.6";
 
-console.log(testnum === 4.6);
+console.log(parseFloat(testnum));
