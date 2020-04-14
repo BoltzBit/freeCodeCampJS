@@ -1,11 +1,32 @@
-let global = "Winter Is  Coming";
+let global = "A Mind Needs Books Like A Sword Needs A Whetstone";
+
+//function urlSlug(str){
+//    let lowerCase = str.toLowerCase();
+//    let strSplit = lowerCase.split(/\W/);
+//
+//    let url = strSplit.filter(a => a!=='');
+//
+//    let slugUrl = url.join("-");
+//
+//    return slugUrl;
+//}
+//
+////let a = urlSlug(global);
+////
+////console.log(!!a[2]);
+//
+//console.log(urlSlug(global));
+//console.log(global);
+
+//solucao alternativa
 
 function urlSlug(str){
-    let lowerCase = str.toLowerCase();
-    let strSplit = lowerCase.split(/\W/);
-    let slugUrl = strSplit.join("-");
-
-    return slugUrl;
+    return str
+        .toLowerCase()
+        .split(/\W/)
+        .filter(a => a !== '')
+        .join("-")
 }
 
-console.log(urlSlug(global));
+var url = urlSlug(global);
+console.log(url);
