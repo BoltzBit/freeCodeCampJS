@@ -1,24 +1,17 @@
 function spinalCase(str){
-    return str
-        .toLowerCase()
-        .split(/\W/)
-        .filter(a => a !== '')
-        .join('-');
+    
+
+
+    return str.indexOf(/[A-Z]/);
 }
 
-//teste para ver se é letra Maiscula
 
-function isUpper(str){
-    let count = 0;
-    for(let i=0;i<str.length;i++){
-        let myStr = str.charCodeAt(i);
 
-        if((myStr>64) && (myStr<91)){
-            count++;
-        }
-    }
+console.log(spinalCase('thisIsSpinalTap'));
 
-    return count;
-}
-
-console.log(isUpper('ThisIsSpinalTap'));
+//ideias para resolver
+//regex maiuscula /[A-Z]/
+//regex underscor /_/
+//indexOf() das letras maiuscula
+//slice() para separar onde começa maiuscula
+//split() para gerar array com strings em lowerCase
