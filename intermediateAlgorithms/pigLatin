@@ -1,0 +1,14 @@
+const vowel = ['a','e','i','o','u'];
+
+function pigLatinTranslate(str){
+	let newArr=[];
+	for(let i=0; i<str.length;i++){
+		if(vowel.includes(str[i])){
+			newArr.push(str[i]);
+		}
+	}
+	
+	return newArr;
+}
+
+console.log(pigLatinTranslate('consoante'));
