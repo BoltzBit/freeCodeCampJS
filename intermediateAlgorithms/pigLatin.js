@@ -1,13 +1,7 @@
 const vowel = ['a','e','i','o','u'];
-const reg = /a,e,i,o,u/;
 
-function pigLatinTranslate(str){
-	
-	/*if(!vowel.includes(str[0])){
-		str2 = `${str.slice(0,1)}ay`;
-		str3 = `${str.slice(1)}${str2}`;
-		return str3;
-	}*/
+//minha solução
+/*function pigLatinTranslate(str){
 	
 	//fazer um loop na string e verificar o indice da vogal
 	if(!vowel.includes(str[0])){
@@ -21,8 +15,67 @@ function pigLatinTranslate(str){
 		}
 		return `${str}ay`;
 	}
-	
 	return `${str}way`;
+}*/
+
+//SOLUCAO ALTERNATIVA 1
+/*function translatePigLatin(str){
+	//regex para o que não é vogal
+	let consonantRegex = /^[^aeiou]+/;
+	
+	//encontra as consoantes na string
+	let myConsonant = str.match(consonantRegex);
+	
+	return myConsonant !== null
+		? str
+			.replace(consonantRegex,'')
+			.concat(myConsonant)
+			.concat('ay')
+		: str.concat('way');
+}*/
+
+//SOLUÇÃO ALTERNATIVA 2
+/*function translatePigLatin(str){
+	let pigLatin = "";
+	let regex = /[aeiou]/gi;
+	
+	//verifica se o primeiro caractere é uma vogal
+	if(str[0].match(regex)){
+		pigLatin = `${str}way`;
+	}else if(str.match(regex) === null){
+		pigLatin = `${str}ay`;
+	}else{
+		//procura o indice da primeira vogal
+		let vowelIndice = str.indexOf(str.match(regex)[0]);
+		
+		//usando substr() concatena a string começando pela vogal, e adicionando a consoante no final
+		pigLatin = `${str.substr(vowelIndice)}${str.substr(0,vowelIndice)}ay`;
+	}
+	
+	return pigLatin;
+}*/
+
+//SOLUÇÃO ALTERNATIVA 3
+/*function translatePigLatin(str){
+	//verifica se começa com vogal e retorna com way
+	if(str.match(/^[aeiou]/)){
+		return `${str}way`;
+	}
+	
+	//cria uma constante armazenando as primeiras consoantes, e retona concatenado com ay
+	const consonantCluster = str.match(/^[^aeiou]+/)[0];
+	return `${str.substring(consonantCluster.length)}${consonantCluster}ay`;
+}*/
+
+//SOLUÇÃO ALTERNATIVA 4
+function translatePigLatin(str){
+	return str
+		.replace(/^[aeiou]\w*/,"$&way")
+		.replace(/(^[^aeiou]+)(\w*)/,"$2$1ay");
 }
 
-console.log(pigLatinTranslate('rhythm'));
+
+
+
+
+console.log(translatePigLatin('aklkgjklk'));
