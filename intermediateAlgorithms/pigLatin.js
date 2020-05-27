@@ -1,7 +1,7 @@
 const vowel = ['a','e','i','o','u'];
 
 //minha solução
-/*function pigLatinTranslate(str){
+function pigLatinTranslate(str){
 	
 	//fazer um loop na string e verificar o indice da vogal
 	if(!vowel.includes(str[0])){
@@ -16,7 +16,7 @@ const vowel = ['a','e','i','o','u'];
 		return `${str}ay`;
 	}
 	return `${str}way`;
-}*/
+}
 
 //SOLUCAO ALTERNATIVA 1
 /*function translatePigLatin(str){
