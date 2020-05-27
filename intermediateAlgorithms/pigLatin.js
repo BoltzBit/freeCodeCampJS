@@ -68,14 +68,22 @@ const vowel = ['a','e','i','o','u'];
 }*/
 
 //SOLUÇÃO ALTERNATIVA 4
-function translatePigLatin(str){
-	return str
-		.replace(/^[aeiou]\w*/,"$&way")
-		.replace(/(^[^aeiou]+)(\w*)/,"$2$1ay");
-}
+
+//function translatePigLatin(str){
+//	return str
+//		.replace(/^[aeiou]\w*/,"$&way")
+//		.replace(/(^[^aeiou]+)(\w*)/,"$2$1ay");
+//}
+
+//SOLUÇÃO ALTERNATIVA 05
+/*function translatePigLatin(str, charPos=0){
+	return ['a','e','i','o','u'].includes(str[0])
+		? str + (charPos === 0 ? 'way' : 'ay')
+		: charPos === str.length
+			? str + 'ay'
+			:translatePigLatin(str.slice(1) + str[0], charPos+1);
+}*/
 
 
 
-
-
-console.log(translatePigLatin('aklkgjklk'));
+console.log(translatePigLatin('aklkagjklk'));
